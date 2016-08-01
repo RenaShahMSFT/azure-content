@@ -301,7 +301,8 @@ The Azure Import/Export client tool PrepImport command for subsequent copy sessi
 
 	WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /srcfile:<SourceFile> /dstblob:<DestinationBlobPath> [/Disposition:<Disposition>] [/BlobType:<BlockBlob|PageBlob>] [/PropertyFile:<PropertyFile>] [/MetadataFile:<MetadataFile>]
 
-**Remember**: By default, the data will be imported as Block Blobs. You can use the /BlobType parameter to import data as a Page Blobs. For example, if you are importing VHD files which will be mounted as disks on an Azure VM, you must import them as Page Blobs. If you are uncertain which blob type to use, you can specify /blobType:auto and we will help determine the right type. In this case, all vhd and vhdx files will be imported as Page Blobs, and the rest will be imported as Block Blobs.
+**Remember**: By default, the data will be imported as Block Blobs. You can use the /BlobType parameter to import data as a Page Blobs. For example, if you are importing VHD files which will be mounted as disks on an Azure VM, you must import them as Page Blobs. If you are uncertain which blob type to use, you can specify /blobType:auto and we will help determine the right type. In this case, all vhd and vhdx files will be imported as Page Blobs, and the rest will be imported as Block Blobs. There is a size restriction on the blob of each type. The maximum size of block blob is slightly more than 195 GB. The maximum size for a page blob is 1 TB.
+
 
 See more details about using the Azure Import/Export client tool in [Preparing Hard Drives for Import](https://msdn.microsoft.com/library/dn529089.aspx).
 
